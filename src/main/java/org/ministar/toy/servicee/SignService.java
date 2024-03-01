@@ -16,8 +16,13 @@ public class SignService {
 
 
     @Transactional
-    public void joinMember(Member member){
-        signRepository.save(member);
+    public Long joinMember(Member member){
+       signRepository.save(member);
+       return member.getId();
+    }
+
+    public Member findMember(Long id){
+        return signRepository.findOne(id);
     }
 
 }
