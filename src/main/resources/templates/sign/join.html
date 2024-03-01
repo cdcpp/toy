@@ -66,25 +66,38 @@
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-    <form>
-        <h1 class="h3 mb-3 fw-normal">장난감</h1>
+    <form role="form" method="post" action="/join" th:object="${joinForm}">
+        <h1 class="h3 mb-3 fw-normal">회원가입</h1>
 
         <div class="form-floating">
-            <label for="floatingInput">이메일</label>
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="email">이메일</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
         </div>
         <div class="form-floating">
-            <label for="floatingPassword">비밀번호</label>
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="password">비밀번호</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+        </div>
+        <div class="form-floating">
+            <label for="interests">관심분야</label>
+            <select class="form-control form-select" name="interests" id="interests">
+                <option selected>관심분야를 선택해주세요</option>
+                <option value="WORKOUT">헬스정보</option>
+                <option value="STOCK">투자정보</option>
+                <option value="ETC">기타</option>
+            </select>
         </div>
 
+        <div class="form-floating">
+            <label for="address1">주소</label>
+            <input type="text" class="form-control"  name ="address1" id="address1" placeholder="Address">
+            <input type="text" class="form-control" name="address2" id="address2" placeholder="Address">
+        </div>
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me"> 정보수집에 동의
             </label>
         </div>
-        <button class="w-100 btn btn-lg btn-dark" type="submit" style="margin-bottom: 5px;">로그인</button>
-        <button class="w-100 btn btn-lg btn-dark" type="button" onclick="location.href='http://localhost:8080/join'">회원가입</button>
+        <button class="w-100 btn btn-lg btn-dark" type="submit">회원가입</button>
     </form>
 </main>
 
