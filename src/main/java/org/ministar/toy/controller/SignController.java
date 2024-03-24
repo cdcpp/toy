@@ -19,7 +19,7 @@ public class SignController {
     @GetMapping("/login")
     public String loginForm(Model model){
         model.addAttribute("hello","hello");
-        return "/sign/login";
+        return "login";
     }
 
     @GetMapping("/join")

@@ -1,6 +1,7 @@
 package org.ministar.toy.utils;
 
 import com.google.common.hash.Hashing;
+import org.springframework.boot.SpringBootConfiguration;
 
 import java.nio.charset.StandardCharsets;
 
@@ -13,5 +14,7 @@ public class ShaUtil {
                 .hashString(pwd , StandardCharsets.UTF_8)
                 .toString();
     }
+
+
 
 }
