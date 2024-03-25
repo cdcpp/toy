@@ -19,7 +19,7 @@ public class SignController {
     @GetMapping("/login")
     public String loginForm(Model model){
         model.addAttribute("hello","hello");
-        return "login";
+        return "/sign/login";
     }
 
     @GetMapping("/join")
@@ -30,8 +30,7 @@ public class SignController {
 
     @PostMapping("/join")
     public String joinMember(JoinForm joinForm){
-        Member member = new Member(joinForm.getEmail(),joinForm.getPassword(),joinForm.getAddress1(),joinForm.getAddress2(),joinForm.getInterests());
-        signService.joinMember(member);
+        signService.joinMember(joinForm);
 
 
         return "redirect:/login";
