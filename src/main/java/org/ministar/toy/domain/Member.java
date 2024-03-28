@@ -11,12 +11,16 @@ public class Member {
     @Column(name = "MEMBER_ID")
     public Long id;
 
-    public String email;
-    public String password;
-    public String addr;
-    public String spec_addr;
+    private String email;
+    private String password;
+    private String addr;
+    private String spec_addr;
     @Enumerated(EnumType.STRING)
-    public Interests interests;
+    private Interests interests;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
 
     public Member(String email, String password, String addr, String spec_addr, Interests interests) {
         this.email = email;

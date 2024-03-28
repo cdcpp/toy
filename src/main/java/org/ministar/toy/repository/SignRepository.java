@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import org.ministar.toy.domain.Member;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class SignRepository {
@@ -17,6 +19,12 @@ public class SignRepository {
 
     public Member findOne(Long id){
         return em.find(Member.class, id);
+    }
+
+    public List<Member> findMemberEmail(String email){
+        return em.createQuery("select m from Member m where m.email = :email")
+                .setParameter("email",email)
+                .getResultList();
     }
 
 }
